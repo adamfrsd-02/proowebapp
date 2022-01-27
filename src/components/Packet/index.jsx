@@ -101,7 +101,7 @@ const Packet = () => {
                         <div className="btn">
                           <Link to={"/detail-paket/" + item._id}>
                             <motion.button
-                              className="px-10 py-2 rounded-lg bg-[#FFBB54] text-white font-bold mt-3"
+                              className="px-5 py-2 rounded-lg bg-[#FFBB54] text-white font-bold mt-3"
                               whileHover={{ scaleX: 1.1 }}
                               whileTap={{
                                 scale: 0.2,

@@ -2,6 +2,7 @@ import React from "react";
 import { Fragment } from "react";
 import { Disclosure, Menu, Transition } from "@headlessui/react";
 import { BellIcon, MenuIcon, XIcon } from "@heroicons/react/outline";
+import Swal from "sweetalert2";
 // import {
 //   BrowserRouter as Router,
 //   Switch,
@@ -16,12 +17,36 @@ const navigation = [
   { name: "Home", href: "/#home", current: false },
   { name: "About", href: "/#about", current: false },
   { name: "Feature", href: "/#feature", current: false },
-  { name: "Career", href: "/#career", current: false },
+  { name: "Career", href: "", current: false },
   { name: "Product", href: "/#product", current: false },
   { name: "Contact", href: "/#contact", current: false },
 ];
 
-function setActive() {}
+function handleClick() {
+  Swal.fire({
+    title: "Warning !",
+    text: "Fitur ini dalam tahap pengembangan !",
+    icon: "warning",
+    confirmButtonColor: "#3085d6",
+    cancelButtonColor: "#d33",
+  });
+}
+
+function getMobileOS() {
+  var userAgent = navigator.userAgent || navigator.vendor || window.opera;
+
+  // Windows Phone must come first because its UA also contains "Android"
+  if (/windows phone/i.test(userAgent)) {
+    alert("Windows Phone");
+  } else if (/android/i.test(userAgent)) {
+    alert("Android");
+  } // iOS detection from: http://stackoverflow.com/a/9039885/177710
+  else if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
+    alert("iOS");
+  } else {
+    alert("unknown");
+  }
+}
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
@@ -72,6 +97,9 @@ function Navbar() {
                             "px-3 py-2 rounded-md  text-lg focus:text-green-500"
                           )}
                           aria-current={item.current ? "page" : undefined}
+                          onClick={
+                            item.name == "Career" ? () => handleClick() : null
+                          }
                         >
                           {item.name}
                         </a>
@@ -80,9 +108,12 @@ function Navbar() {
                   </div>
                 </div>
                 <div className="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
-                  <p className="text-white bg-[#00C167] font-bold py-3 px-10 rounded-md hidden md:block">
+                  <button
+                    className="text-white bg-[#00C167] font-bold py-3 px-10 rounded-md hidden md:block"
+                    onClick={() => getMobileOS()}
+                  >
                     Sign Up
-                  </p>
+                  </button>
                   {/* Profile dropdown */}
                   {/* <Menu as="div" className="ml-3 relative">
                     <div>
@@ -169,6 +200,14 @@ function Navbar() {
                     {item.name}
                   </Disclosure.Button>
                 ))}
+                <center>
+                  <button
+                    className="text-white bg-[#00C167] font-bold py-3 px-10 rounded-md mx-auto"
+                    onClick={() => getMobileOS()}
+                  >
+                    Sign Up
+                  </button>
+                </center>
               </div>
             </Disclosure.Panel>
           </>

@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import axios from "axios";
 import { getPelajaran } from "../../redux/actions/pelajaran";
 import { useSelector, useDispatch } from "react-redux";
+import ScrollToTop from "../../utils/scrollTop";
 
 const PackageDetail = (props) => {
   const idPaket = window.location.pathname.split("/")[2];
@@ -23,9 +24,20 @@ const PackageDetail = (props) => {
   //console.log("ada", apiUrl + "menuProo");
 
   const fetchJenis = async (id) => {
+    setJenisPelajaran([]);
     try {
       await axios.get("https://server.proo.co.id/api/pelajaran").then((res) => {
         setJenisPelajaran(res.data.filter((i) => i.nama === id));
+      });
+    } catch (err) {
+      console.log(`err`, err);
+    }
+  };
+
+  const defaultJenis = async () => {
+    try {
+      await axios.get("https://server.proo.co.id/api/pelajaran").then((res) => {
+        setJenisPelajaran(res.data);
       });
     } catch (err) {
       console.log(`err`, err);
@@ -64,7 +76,7 @@ const PackageDetail = (props) => {
                 pelajaranData.map((item) => (
                   <button
                     key={item._id}
-                    className="hover:rounded-md hover:bg-green-500 px-5 py-2 hover:text-white font-bold focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-green-500 focus:bg-green-500 focus:ring-green-500 focus:text-white focus:rounded-md md:mx-5"
+                    className="hover:rounded-md hover:bg-green-500 px-5 py-2 hover:text-white font-bold focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-green-500 focus:bg-green-500 focus:ring-green-500 focus:text-white focus:rounded-md md:mx-5 "
                     onClick={() => {
                       //alert(item.idMenu._id);
                       fetchJenis(item.nama);
@@ -90,7 +102,10 @@ const PackageDetail = (props) => {
         {/*  className="flex xl:flex-row md:flex-row flex-col items-center md:justify-items-evenly mx-auto xl:justify-evenly md:justify-evenly " */}
         <div className="row justify-evenly container mx-auto">
           {jenisPelajaran.length === 0 ? (
-            <div className="bg-orange-300 px-5 py-3 rounded-lg text-center">
+            <div className="bg-orange-300 px-5 py-8 rounded-lg text-center mx-auto">
+              <center>
+                <i className="fas fa-exclamation-circle fa-2xl mb-8"></i>
+              </center>
               Silahkan Pilih Pelajaran
             </div>
           ) : (
@@ -145,6 +160,7 @@ const PackageDetail = (props) => {
           )}
         </div>
       </div>
+      <ScrollToTop />
     </div>
   );
 };
