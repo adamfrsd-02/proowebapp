@@ -12,41 +12,24 @@ import Swal from "sweetalert2";
 // } from "react-router-dom";
 
 import { Link } from "react-scroll";
+import getMobileOS from "../../utils/checkOS";
 
 const navigation = [
   { name: "Home", href: "/#home", current: false },
   { name: "About", href: "/#about", current: false },
   { name: "Feature", href: "/#feature", current: false },
-  { name: "Career", href: "", current: false },
+  { name: "Career", current: false },
   { name: "Product", href: "/#product", current: false },
   { name: "Contact", href: "/#contact", current: false },
 ];
 
-function handleClick() {
+const handleClick = () => {
   Swal.fire({
     title: "Warning !",
     text: "Fitur ini dalam tahap pengembangan !",
     icon: "warning",
-    confirmButtonColor: "#3085d6",
-    cancelButtonColor: "#d33",
   });
-}
-
-function getMobileOS() {
-  var userAgent = navigator.userAgent || navigator.vendor || window.opera;
-
-  // Windows Phone must come first because its UA also contains "Android"
-  if (/windows phone/i.test(userAgent)) {
-    alert("Windows Phone");
-  } else if (/android/i.test(userAgent)) {
-    alert("Android");
-  } // iOS detection from: http://stackoverflow.com/a/9039885/177710
-  else if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
-    alert("iOS");
-  } else {
-    alert("unknown");
-  }
-}
+};
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
@@ -54,7 +37,7 @@ function classNames(...classes) {
 
 function Navbar() {
   return (
-    <div className="sticky top-0 bg-[#FFBB54] shadow-md justify-between p-2">
+    <div className="sticky top-0 bg-[#FFBB54] shadow-md justify-between p-2 z-40">
       <Disclosure as="nav">
         {({ open }) => (
           <>

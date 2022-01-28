@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import { motion } from "framer-motion";
+import getMobileOS from "../../utils/checkOS";
 
 const WhyUs = () => {
   useEffect(() => {
@@ -111,7 +112,10 @@ const WhyUs = () => {
         </div>
         <div className="footer-content mt-10">
           <center>
-            <button className="bg-white text-[#1f2d3d] px-10 py-3 text-lg font-black rounded-md">
+            <button
+              className="bg-white text-[#1f2d3d] px-10 py-3 text-lg font-black rounded-md"
+              onClick={() => getMobileOS()}
+            >
               Coba Sekarang
             </button>
           </center>

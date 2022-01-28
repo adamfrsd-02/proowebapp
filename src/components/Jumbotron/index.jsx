@@ -1,4 +1,5 @@
 import React from "react";
+import getMobileOS from "../../utils/checkOS";
 
 const Jumbotron = () => {
   return (
@@ -14,8 +15,8 @@ const Jumbotron = () => {
           </p>
           <div className="flex flex-col space-y-4 sm:items-center sm:justify-center sm:flex-row sm:space-y-0 sm:space-x-4 lg:justify-start">
             <a
-              href="#"
-              className="px-8 py-3 text-lg font-bold rounded bg-green-500 text-white"
+              className="px-8 py-3 text-lg font-bold rounded bg-green-500 text-white hover:cursor-pointer"
+              onClick={() => getMobileOS()}
             >
               Coba Sekarang
             </a>
@@ -23,7 +24,12 @@ const Jumbotron = () => {
               href="#"
               className="px-8 py-3 text-lg font-semibold text-green-500 space-x-4"
             >
-              <i className="fas fa-play"></i> <span>Lihat Demo</span>
+              <i className="fas fa-play"></i>{" "}
+              <span>
+                <a href="https://www.youtube.com/watch?v=nL87m6dqd-Q">
+                  Lihat Demo
+                </a>
+              </span>
             </a>
           </div>
           <hr className="mt-5" />
@@ -32,8 +38,8 @@ const Jumbotron = () => {
               Download sekarang !
             </p>
             <div className="flex flex-col space-y-4 sm:items-center sm:justify-center sm:flex-row sm:space-y-0 sm:space-x-4 lg:justify-start md:-ml-3">
-              <img src="/assets/ps.png" alt="" />
-              <img src="/assets/is.png" alt="" />
+              <img src="/assets/ps.png" alt="" onClick={() => getMobileOS()} />
+              <img src="/assets/is.png" alt="" onClick={() => getMobileOS()} />
             </div>
           </div>
         </div>

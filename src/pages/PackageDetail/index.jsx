@@ -1,58 +1,44 @@
 import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import axios from "axios";
 import { getPelajaran } from "../../redux/actions/pelajaran";
 import { useSelector, useDispatch } from "react-redux";
 import ScrollToTop from "../../utils/scrollTop";
+import getMobileOS from "../../utils/checkOS";
+import shorten from "../../utils/shorten";
 
 const PackageDetail = (props) => {
-  const idPaket = window.location.pathname.split("/")[2];
+  //const idPaket = window.location.pathname.split("/")[2];
+  const location = useLocation();
+  const { pelajaran } = location.state;
+
+  //console.log("location.state", pelajaran);
 
   const dispatch = useDispatch();
-  const pelajaranData = useSelector((state) =>
-    state.pelajaran.data.filter((item) => item.idMenu._id === idPaket)
-  );
+  // const pelajaranData = useSelector((state) =>
+  //   state.pelajaran.data.filter((item) => item.idMenu._id === idPaket)
+  // );
 
-  React.useEffect(() => {
-    dispatch(getPelajaran());
-  }, []);
+  // React.useEffect(() => {
+  //   dispatch(getPelajaran());
+  // }, []);
 
   //const [pelajaran, setPelajaran] = useState([]);
-  const [idJenis, setIdJenis] = useState([]);
-  const [jenisPelajaran, setJenisPelajaran] = useState([]);
+  const [idJenis, setIdJenis] = useState(pelajaran[0].nama);
+  const [jenisPelajaran, setJenisPelajaran] = useState(
+    pelajaran.filter((i) => i.nama === idJenis)
+  );
 
   //console.log("ada", apiUrl + "menuProo");
 
   const fetchJenis = async (id) => {
-    setJenisPelajaran([]);
-    try {
-      await axios.get("https://server.proo.co.id/api/pelajaran").then((res) => {
-        setJenisPelajaran(res.data.filter((i) => i.nama === id));
-      });
-    } catch (err) {
-      console.log(`err`, err);
-    }
+    setIdJenis(id);
+    setJenisPelajaran(pelajaran.filter((i) => i.nama === id));
   };
 
-  const defaultJenis = async () => {
-    try {
-      await axios.get("https://server.proo.co.id/api/pelajaran").then((res) => {
-        setJenisPelajaran(res.data);
-      });
-    } catch (err) {
-      console.log(`err`, err);
-    }
-  };
-
-  console.log("idPaket", idPaket);
-  console.log(`idJenis`, idJenis);
-  console.log(`jenisPelajaran`, jenisPelajaran);
-
-  function shorten(text, max) {
-    return text && text.length > max
-      ? text.slice(0, max).split(" ").slice(0, -1).join(" ")
-      : text;
-  }
+  //console.log("idPaket", idPaket);
+  // console.log(`idJenis`, idJenis);
+  // console.log(`jenisPelajaran`, jenisPelajaran);
 
   return (
     <div className="mt-10 mb-5 md:container items-center" id="paket">
@@ -70,10 +56,10 @@ const PackageDetail = (props) => {
               >
                 All
               </button> */}
-              {pelajaranData.length === 0 ? (
+              {pelajaran.length === 0 ? (
                 <div className="loader"></div>
               ) : (
-                pelajaranData.map((item) => (
+                pelajaran.map((item) => (
                   <button
                     key={item._id}
                     className="hover:rounded-md hover:bg-green-500 px-5 py-2 hover:text-white font-bold focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-green-500 focus:bg-green-500 focus:ring-green-500 focus:text-white focus:rounded-md md:mx-5 "
@@ -102,18 +88,23 @@ const PackageDetail = (props) => {
         {/*  className="flex xl:flex-row md:flex-row flex-col items-center md:justify-items-evenly mx-auto xl:justify-evenly md:justify-evenly " */}
         <div className="row justify-evenly container mx-auto">
           {jenisPelajaran.length === 0 ? (
-            <div className="bg-orange-300 px-5 py-8 rounded-lg text-center mx-auto">
+            <div className="bg-orange-300 px-5 py-8 rounded-lg text-center mx-auto md:w-1/2">
               <center>
-                <i className="fas fa-exclamation-circle fa-2xl mb-8"></i>
+                <i className="fas fa-spinner fa-5x mb-8 fa-spin"></i>
               </center>
-              Silahkan Pilih Pelajaran
+              <p className="text-xl font-bold">
+                Silahkan Pilih Pelajaran Terlebih Dahulu !
+              </p>
             </div>
           ) : (
             jenisPelajaran.map((jenis) => (
               <>
                 {jenis.subPelajaran.map((sub) =>
                   sub.paket.map((paket) => (
-                    <div className="max-w-xs flex flex-col justify-items-center mb-5 bg-gradient-to-b from-yellow-200 via-orange-300 to-orange-400 rounded-md shadow-md pt-5 h-auto">
+                    <div
+                      className="max-w-xs flex flex-col justify-items-center mb-5 bg-gradient-to-b from-yellow-200 via-orange-300 to-orange-400 rounded-md shadow-md pt-5 h-auto"
+                      key={paket.nama}
+                    >
                       <center className="px-5">
                         <p className="text-3xl font-extrabold title mb-3">
                           {sub.nama}
@@ -148,6 +139,7 @@ const PackageDetail = (props) => {
                           //query={{ id: item._id }}
                           type="button"
                           className="flex text-white mt-5 mb-5 hover:text-white hover:-translate-y-3 items-center justify-center w-1/2 p-3 font-extrabold tracking-wide rounded-md bg-green-400 shadow-md"
+                          onClick={() => getMobileOS()}
                         >
                           Pesan
                         </button>

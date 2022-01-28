@@ -53,22 +53,7 @@ const Features = () => {
                   </div>
                 </center>
               </div>
-              <div className="col">
-                <center>
-                  <div className="bg-gradient-to-bl from-[#FFC164] to-[#FED867DE] h-auto py-16 space-y-5 px-10 my-auto rounded-md">
-                    <div className="content items-start">
-                      <img src="/assets/mengaji.png" className="h-16" alt="" />
-                      <p className="text-xl font-bold mt-6">Proo Mengaji</p>
-                    </div>
-                    <div className="text-desc">
-                      <p className="text-center">
-                        Untuk membantu pembelajaran Al-Qur’an. Proo menyediakan
-                        aplikasi Al-Qur’an.
-                      </p>
-                    </div>
-                  </div>
-                </center>
-              </div>
+
               <div className="col">
                 <center>
                   <div className="bg-gradient-to-bl from-[#FFC164] to-[#FED867DE] h-auto py-16 space-y-5 px-10 my-auto rounded-md">
@@ -80,6 +65,22 @@ const Features = () => {
                       <p className="text-center">
                         Sebagai layanan mengaji privat. Proo menyediakan
                         Al-Qur’an digital untuk fitur penunjangnya.
+                      </p>
+                    </div>
+                  </div>
+                </center>
+              </div>
+              <div className="col">
+                <center>
+                  <div className="bg-gradient-to-bl from-[#FFC164] to-[#FED867DE] h-auto py-16 space-y-5 px-10 my-auto rounded-md">
+                    <div className="content items-start">
+                      <img src="/assets/mengaji.png" className="h-16" alt="" />
+                      <p className="text-xl font-bold mt-6">Proo Mengaji</p>
+                    </div>
+                    <div className="text-desc">
+                      <p className="text-center">
+                        Untuk membantu pembelajaran Al-Qur’an. Proo menyediakan
+                        layanan ngaji privat Al-Qur’an.
                       </p>
                     </div>
                   </div>

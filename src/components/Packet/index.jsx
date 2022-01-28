@@ -2,9 +2,12 @@ import React from "react";
 import { motion } from "framer-motion";
 import { getPaket } from "../../redux/actions/paket";
 import { useSelector, useDispatch } from "react-redux";
-import { Link } from "react-router-dom";
+import { Link, useRoutes, useNavigate } from "react-router-dom";
+import shorten from "../../utils/shorten";
+import getMobileOS from "../../utils/checkOS";
 
-const Packet = () => {
+const Packet = (props) => {
+  const navigate = useNavigate();
   const dispatch = useDispatch();
   const menuPaket = useSelector((state) => state.paket.data);
   console.log("menuPaket", menuPaket);
@@ -12,17 +15,12 @@ const Packet = () => {
     dispatch(getPaket());
   }, []);
 
-  function shorten(text, max) {
-    return text && text.length > max
-      ? text.slice(0, max).split(" ").slice(0, -1).join(" ")
-      : text;
-  }
-
   if (!menuPaket || menuPaket.length === 0)
     return (
-      <p className="text-center font-bold text-lg" id="product">
-        Paket Sedang Proses Loading !
-      </p>
+      <div className="text-center font-bold text-lg my-64" id="product">
+        <i className="fas fa-spinner fa-2xl mb-10 fa-spin"></i>
+        <p>Paket Sedang Proses Loading !</p>
+      </div>
     );
 
   return (
@@ -99,17 +97,22 @@ const Packet = () => {
                           </p>
                         </div>
                         <div className="btn">
-                          <Link to={"/detail-paket/" + item._id}>
-                            <motion.button
-                              className="px-5 py-2 rounded-lg bg-[#FFBB54] text-white font-bold mt-3"
-                              whileHover={{ scaleX: 1.1 }}
-                              whileTap={{
-                                scale: 0.2,
-                              }}
-                            >
-                              Detail
-                            </motion.button>
-                          </Link>
+                          {/* <Link to={"/detail-paket/" + item._id}> */}
+                          <motion.button
+                            onClick={() =>
+                              navigate(`/detail-paket/${item._id}`, {
+                                state: item,
+                              })
+                            }
+                            className="px-5 py-2 rounded-lg bg-[#FFBB54] text-white font-bold mt-3"
+                            whileHover={{ scaleX: 1.1 }}
+                            whileTap={{
+                              scale: 0.2,
+                            }}
+                          >
+                            Detail
+                          </motion.button>
+                          {/* </Link> */}
                         </div>
                       </div>
                     </motion.div>
@@ -120,7 +123,10 @@ const Packet = () => {
         </div>
         <div className="footer-content mt-10">
           <center>
-            <button className="bg-[#1f2d3d] text-white px-10 py-3 text-lg font-bold rounded-md">
+            <button
+              className="bg-[#1f2d3d] text-white px-10 py-3 text-lg font-bold rounded-md"
+              onClick={() => getMobileOS()}
+            >
               Selengkapnya
             </button>
           </center>

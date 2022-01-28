@@ -3,10 +3,9 @@ import {
   BrowserRouter as Router,
   Route,
   Routes,
-  useHistory,
+  useNavigate,
   useLocation,
 } from "react-router-dom";
-import { createBrowserHistory } from "history";
 import { useDispatch, useSelector } from "react-redux";
 import Footer from "../../components/Footer";
 import Navbar from "../../components/Navbar";
