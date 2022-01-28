@@ -3,12 +3,12 @@ import React from "react";
 const DownloadNow = () => {
   return (
     <center>
-      <div className="bg-white -mt-16 w-2/3 h-auto rounded-xl py-6 pb-14 px-10 shadow-lg">
-        <div className="row">
+      <div className="bg-white -mt-16 w-2/3 my-auto h-auto rounded-xl py-6 pb-14 px-10 shadow-lg">
+        <div className="md:row">
           <div className="col">
-            <img src="/assets/down.png" alt="" />
+            <img src="/assets/down.png" className="w-auto" alt="" />
           </div>
-          <div className="col text-left space-y-2 md:-ml-10 my-auto">
+          <div className="col text-left space-y-2 md:-ml-10 my-auto lg:mt-32">
             <p className="leading-relaxed text-3xl font-extrabold text-[#1F2D3D]">
               Download Proo Apps Sekarang Juga !
             </p>

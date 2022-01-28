@@ -37,7 +37,7 @@ function classNames(...classes) {
 
 function Navbar() {
   return (
-    <div className="sticky top-0 bg-[#FFBB54] shadow-md justify-between p-2 z-40">
+    <div className="sticky top-0 bg-[#FFBB54] shadow-md justify-between p-2 z-20">
       <Disclosure as="nav">
         {({ open }) => (
           <>

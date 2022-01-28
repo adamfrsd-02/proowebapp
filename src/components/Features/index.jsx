@@ -20,10 +20,10 @@ const Features = () => {
         </div>
         <div className="body-content mt-10">
           <div className="container">
-            <div className="row space-y-3 md:space-y-0">
+            <div className="md:row space-y-3 md:space-y-0">
               <div className="col">
                 <center>
-                  <div className="bg-gradient-to-bl from-[#FFC164] to-[#FED867DE] h-auto py-16 space-y-5 px-10 my-auto rounded-md">
+                  <div className="bg-gradient-to-bl from-[#FFC164] to-[#FED867DE] py-16 space-y-5 px-10 my-auto rounded-md">
                     <div className="content items-start">
                       <img src="/assets/bimbel.png" className="h-16" alt="" />
                       <p className="text-xl font-bold mt-6">Proo Bimbel</p>
@@ -39,7 +39,7 @@ const Features = () => {
               </div>
               <div className="col">
                 <center>
-                  <div className="bg-gradient-to-bl from-[#FFC164] to-[#FED867DE] h-auto py-16 space-y-5 px-10 my-auto rounded-md">
+                  <div className="bg-gradient-to-bl from-[#FFC164] to-[#FED867DE] py-16 space-y-5 px-10 my-auto rounded-md">
                     <div className="content items-start">
                       <img src="/assets/bahasa.png" className="h-16" alt="" />
                       <p className="text-xl font-bold mt-6">Proo Bahasa</p>
@@ -56,7 +56,7 @@ const Features = () => {
 
               <div className="col">
                 <center>
-                  <div className="bg-gradient-to-bl from-[#FFC164] to-[#FED867DE] h-auto py-16 space-y-5 px-10 my-auto rounded-md">
+                  <div className="bg-gradient-to-bl from-[#FFC164] to-[#FED867DE] py-16 space-y-5 px-10 my-auto rounded-md">
                     <div className="content items-start">
                       <img src="/assets/e-quran.png" className="h-16" alt="" />
                       <p className="text-xl font-bold mt-6">Proo e-Qur'an</p>
@@ -72,7 +72,7 @@ const Features = () => {
               </div>
               <div className="col">
                 <center>
-                  <div className="bg-gradient-to-bl from-[#FFC164] to-[#FED867DE] h-auto py-16 space-y-5 px-10 my-auto rounded-md">
+                  <div className="bg-gradient-to-bl from-[#FFC164] to-[#FED867DE] py-16 space-y-5 px-10 my-auto rounded-md">
                     <div className="content items-start">
                       <img src="/assets/mengaji.png" className="h-16" alt="" />
                       <p className="text-xl font-bold mt-6">Proo Mengaji</p>

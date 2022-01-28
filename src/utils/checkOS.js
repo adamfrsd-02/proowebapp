@@ -17,7 +17,11 @@ function getMobileOS() {
             text: "Belum Tersedia di iPhone"
         });
     } else {
-        alert("unknown");
+        Swal.fire({
+            title: "Kamu Menggunakan PC !",
+            icon: "warning",
+            text: "Akan Segera Hadir Fitur untuk Pengguna PC"
+        });
     }
 }
 
