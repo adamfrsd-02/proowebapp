@@ -100,52 +100,54 @@ const PackageDetail = (props) => {
             jenisPelajaran.map((jenis) => (
               <>
                 {jenis.subPelajaran.map((sub) =>
-                  sub.paket.map((paket) => (
-                    <div
-                      className="max-w-xs flex flex-col justify-items-center mb-5 bg-gradient-to-b from-yellow-200 via-orange-300 to-orange-400 rounded-md shadow-md pt-5 h-auto"
-                      key={paket.nama}
-                    >
-                      <center className="px-5">
-                        <p className="text-3xl font-extrabold title mb-3">
-                          {sub.nama}
-                        </p>
-                        <p className="text-xl font-regular title mb-3 -mt-3 ">
-                          ({paket.nama})
-                        </p>
-                        <hr className="w-25" />
-                        <img src="/assets/sit.png" alt="" />
-                        <div className="price grid justify-items-center">
-                          <div className="">
-                            <p className="text-8xl font-extrabold text-green-500">
-                              30
-                            </p>
-                          </div>
-                          <div className="currency-tag -mt-24 ml-24">
-                            <p className="text-2xl font-extrabold text-white bg-yellow-300 rounded-full pl-1 pr-1">
-                              rb
-                            </p>
-                          </div>
-                        </div>
-                        <p className="">/pertemuan</p>
-                        <hr className="w-25 mt-3" />
-                        <div className="desc mt-3 text-white">
-                          <p>
-                            <strong>{paket.deskripsi}</strong>
+                  sub.paket.map((paket) =>
+                    paket.pertemuan.map((pertemuan) => (
+                      <div
+                        className="max-w-xs flex flex-col justify-items-center mb-5 bg-gradient-to-b from-yellow-200 via-orange-300 to-orange-400 rounded-md shadow-md pt-5 h-auto"
+                        key={paket.nama}
+                      >
+                        <center className="px-5">
+                          <p className="text-3xl font-extrabold title mb-3">
+                            {sub.nama}
                           </p>
-                          <strong>{shorten(sub.keterangan, 30)}</strong>
-                        </div>
-                        <button
-                          //onClick={() => detailButton(item._id)}
-                          //query={{ id: item._id }}
-                          type="button"
-                          className="flex text-white mt-5 mb-5 hover:text-white hover:-translate-y-3 items-center justify-center w-1/2 p-3 font-extrabold tracking-wide rounded-md bg-green-400 shadow-md"
-                          onClick={() => getMobileOS()}
-                        >
-                          Pesan
-                        </button>
-                      </center>
-                    </div>
-                  ))
+                          <p className="text-xl font-regular title mb-3 -mt-3 ">
+                            ({paket.nama})
+                          </p>
+                          <hr className="w-25" />
+                          <img src="/assets/sit.png" alt="" />
+                          <div className="price grid justify-items-center">
+                            <div className="">
+                              <p className="text-8xl font-extrabold text-green-500">
+                                {pertemuan.harga.split(".", 1)[0]}
+                              </p>
+                            </div>
+                            <div className="currency-tag -mt-24 ml-24">
+                              <p className="text-2xl font-extrabold text-white bg-yellow-300 rounded-full pl-1 pr-1">
+                                rb
+                              </p>
+                            </div>
+                          </div>
+                          <p className="">/pertemuan</p>
+                          <hr className="w-25 mt-3" />
+                          <div className="desc mt-3 text-white">
+                            <p>
+                              <strong>{paket.deskripsi}</strong>
+                            </p>
+                            <strong>{shorten(sub.keterangan, 30)}</strong>
+                          </div>
+                          <button
+                            //onClick={() => detailButton(item._id)}
+                            //query={{ id: item._id }}
+                            type="button"
+                            className="flex text-white mt-5 mb-5 hover:text-white hover:-translate-y-3 items-center justify-center w-1/2 p-3 font-extrabold tracking-wide rounded-md bg-green-400 shadow-md"
+                            onClick={() => getMobileOS()}
+                          >
+                            Pesan
+                          </button>
+                        </center>
+                      </div>
+                    ))
+                  )
                 )}
               </>
             ))

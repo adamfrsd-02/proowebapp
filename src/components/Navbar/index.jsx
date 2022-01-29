@@ -17,9 +17,9 @@ import getMobileOS from "../../utils/checkOS";
 const navigation = [
   { name: "Home", href: "/#home", current: false },
   { name: "About", href: "/#about", current: false },
-  { name: "Feature", href: "/#feature", current: false },
-  { name: "Career", current: false },
   { name: "Product", href: "/#product", current: false },
+  { name: "Career", current: false },
+  { name: "Feature", href: "/#feature", current: false },
   { name: "Contact", href: "/#contact", current: false },
 ];
 
