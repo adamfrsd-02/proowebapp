@@ -121,7 +121,7 @@ const Packet = (props) => {
             </div>
           </div>
         </div>
-        <div className="footer-content mt-10">
+        {/* <div className="footer-content mt-10">
           <center>
             <button
               className="bg-[#1f2d3d] text-white px-10 py-3 text-lg font-bold rounded-md"
@@ -130,7 +130,7 @@ const Packet = (props) => {
               Selengkapnya
             </button>
           </center>
-        </div>
+        </div> */}
       </div>
     </div>
   );

@@ -92,10 +92,10 @@ function Navbar() {
                 </div>
                 <div className="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
                   <button
-                    className="text-white bg-[#00C167] font-bold py-3 px-10 rounded-md hidden md:block"
+                    className="text-white outline outline-offset-2 outline-white font-bold py-2 px-8 rounded-md hidden md:block"
                     onClick={() => getMobileOS()}
                   >
-                    Sign Up
+                    Download
                   </button>
                   {/* Profile dropdown */}
                   {/* <Menu as="div" className="ml-3 relative">

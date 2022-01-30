@@ -32,7 +32,7 @@ const Jumbotron = () => {
               </span>
             </a>
           </div>
-          <hr className="mt-5" />
+          {/* <hr className="mt-5" />
           <div className="download mt-5">
             <p className="text-center mb-5 font-bold text-[#1B252F]">
               Download sekarang !
@@ -41,7 +41,7 @@ const Jumbotron = () => {
               <img src="/assets/ps.png" alt="" onClick={() => getMobileOS()} />
               <img src="/assets/is.png" alt="" onClick={() => getMobileOS()} />
             </div>
-          </div>
+          </div> */}
         </div>
         <div className="flex items-center justify-center p-6 mt-8 lg:mt-0  sm:-mt-15">
           <img

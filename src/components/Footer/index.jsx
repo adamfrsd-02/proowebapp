@@ -1,5 +1,6 @@
 import React, { Fragment, useState } from "react";
 import { Transition, Dialog } from "@headlessui/react";
+import getMobileOS from "../../utils/checkOS";
 
 const Footer = () => {
   let [isOpen, setIsOpen] = useState(false);
@@ -34,8 +35,18 @@ const Footer = () => {
                   </p>
                 </div>
                 <div className="flex flex-col space-y-4 sm:items-center sm:justify-center sm:flex-row sm:space-y-0 sm:space-x-4 lg:justify-start md:-ml-3">
-                  <img src="/assets/ps.png" className="h-14" alt="" />
-                  <img src="/assets/is.png" className="h-14" alt="" />
+                  <img
+                    src="/assets/ps.png"
+                    onClick={() => getMobileOS()}
+                    className="h-14"
+                    alt=""
+                  />
+                  <img
+                    src="/assets/is.png"
+                    onClick={() => getMobileOS()}
+                    className="h-14"
+                    alt=""
+                  />
                 </div>
               </div>
               <div className="col space-y-5">
@@ -106,21 +117,21 @@ const Footer = () => {
               </div>
               <div className="flex justify-center pt-4 space-x-4 lg:pt-0 lg:col-end-13">
                 <a
-                  href="#"
-                  title="Email"
+                  href="https://www.youtube.com/channel/UCK5GuYWRSbznXLla8Hjr8wA"
+                  title="Youtube"
                   className="flex items-center justify-center w-10 h-10 rounded-full "
                 >
                   <i className="fab fa-youtube text-red-500 fa-2xl"></i>
                 </a>
-                <a
+                {/* <a
                   href="#"
                   title="Facebook"
                   className="flex items-center justify-center w-10 h-10 rounded-full "
                 >
                   <i className="fab fa-facebook text-blue-500 fa-2xl"></i>
-                </a>
+                </a> */}
                 <a
-                  href="#"
+                  href="https://www.instagram.com/proo__id"
                   title="Instagram"
                   className="flex items-center justify-center w-10 h-10 rounded-full"
                 >

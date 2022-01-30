@@ -110,7 +110,7 @@ const WhyUs = () => {
             </div>
           </div>
         </div>
-        <div className="footer-content mt-10">
+        {/* <div className="footer-content mt-10">
           <center>
             <button
               className="bg-white text-[#1f2d3d] px-10 py-3 text-lg font-black rounded-md"
@@ -119,7 +119,7 @@ const WhyUs = () => {
               Coba Sekarang
             </button>
           </center>
-        </div>
+        </div> */}
       </div>
     </div>
   );

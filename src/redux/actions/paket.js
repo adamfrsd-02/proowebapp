@@ -3,8 +3,8 @@ import {
   GET_PAKET
 } from "./types";
 
-//const api = "https://server.proo.co.id";
-const api = "http://localhost:5000";
+const api = "https://server.proo.co.id";
+//const api = "http://localhost:5000";
 
 export const getPaket = () => (dispatch) => {
   axios
