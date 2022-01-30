@@ -14,12 +14,12 @@ const Jumbotron = () => {
             Guru datang langsung ke rumah.
           </p>
           <div className="flex flex-col space-y-4 sm:items-center sm:justify-center sm:flex-row sm:space-y-0 sm:space-x-4 lg:justify-start">
-            <a
+            {/* <a
               className="px-8 py-3 text-lg font-bold rounded bg-green-500 text-white hover:cursor-pointer"
               onClick={() => getMobileOS()}
             >
               Coba Sekarang
-            </a>
+            </a> */}
             <a
               href="#"
               className="px-8 py-3 text-lg font-semibold text-green-500 space-x-4"
