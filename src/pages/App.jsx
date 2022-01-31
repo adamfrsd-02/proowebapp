@@ -5,6 +5,7 @@ import AOS from "aos";
 import React from "react";
 import store from "../store";
 import { Provider } from "react-redux";
+import ChatMe from "../components/ChatMe";
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
         <Provider store={store}>
           <Routing />
         </Provider>
+        <ChatMe />
       </div>
     </>
   );

@@ -1,4 +1,5 @@
 import React from "react";
+import getMobileOS from "../../utils/checkOS";
 
 const DownloadNow = () => {
   return (
@@ -18,8 +19,18 @@ const DownloadNow = () => {
             </p>
             <div className="button-cta">
               <div className="flex flex-col space-y-4 mt-5 sm:items-center sm:justify-center sm:flex-row sm:space-y-0 sm:space-x-4 lg:justify-start md:-ml-3">
-                <img src="/assets/ps.png" className="h-14" alt="" />
-                <img src="/assets/is.png" className="h-14" alt="" />
+                <img
+                  src="/assets/ps.png"
+                  onClick={() => getMobileOS()}
+                  className="h-14"
+                  alt=""
+                />
+                <img
+                  src="/assets/is.png"
+                  onClick={() => getMobileOS()}
+                  className="h-14"
+                  alt=""
+                />
               </div>
             </div>
           </div>

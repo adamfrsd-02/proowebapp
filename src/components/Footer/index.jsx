@@ -108,7 +108,7 @@ const Footer = () => {
                   <i className="fas fa-heart text-lg text-rose-500"></i> by Proo
                   Fullstack Developer &nbsp; &nbsp; &nbsp; |
                 </span>
-                <a onClick={() => openModal()}>
+                <a onClick={() => openModal()} className="hover:cursor-pointer">
                   <span>Privacy policy</span>
                 </a>
                 <a href="#">

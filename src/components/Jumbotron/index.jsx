@@ -22,7 +22,7 @@ const Jumbotron = () => {
             </a> */}
             <a
               href="#"
-              className="px-8 py-3 text-lg font-semibold text-green-500 space-x-4"
+              className="px-10 py-4 text-lg font-bold rounded-2xl bg-green-500 text-white hover:cursor-pointer space-x-3"
             >
               <i className="fas fa-play"></i>{" "}
               <span>
@@ -31,6 +31,17 @@ const Jumbotron = () => {
                 </a>
               </span>
             </a>
+            {/* <a
+              href="#"
+              className="py-3 text-lg font-semibold text-green-500 space-x-4"
+            >
+              <i className="fas fa-play"></i>{" "}
+              <span>
+                <a href="https://www.youtube.com/watch?v=nL87m6dqd-Q">
+                  Lihat Demo
+                </a>
+              </span>
+            </a> */}
           </div>
           {/* <hr className="mt-5" />
           <div className="download mt-5">
