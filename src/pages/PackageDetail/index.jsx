@@ -104,7 +104,7 @@ const PackageDetail = (props) => {
                     paket.pertemuan.map((pertemuan) => (
                       <div
                         className="max-w-xs flex flex-col justify-items-center mb-5 bg-gradient-to-b from-yellow-200 via-orange-300 to-orange-400 rounded-md shadow-md pt-5 h-auto"
-                        key={paket.nama}
+                        key={pertemuan.idSubPelajaran}
                       >
                         <center className="px-5">
                           <p className="text-3xl font-extrabold title mb-3">

@@ -6,10 +6,11 @@ import Jumbotron from "../../components/Jumbotron";
 import Packet from "../../components/Packet";
 import WhyUs from "../../components/WhyUs";
 import ScrollToTop from "../../utils/scrollTop";
+import { motion } from "framer-motion";
 
 const LandingPage = () => {
   return (
-    <>
+    <motion.div exit={{ opacity: 0 }}>
       <Jumbotron />
       <WhyUs />
       <Packet />
@@ -17,7 +18,7 @@ const LandingPage = () => {
       <DownloadNow />
       <Contact />
       <ScrollToTop />
-    </>
+    </motion.div>
   );
 };
 

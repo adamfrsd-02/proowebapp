@@ -17,11 +17,7 @@ function getMobileOS() {
             text: "Belum Tersedia di iPhone"
         });
     } else {
-        Swal.fire({
-            title: "Kamu Menggunakan PC !",
-            icon: "warning",
-            text: "Akan Segera Hadir Fitur untuk Pengguna PC"
-        });
+        window.open("https://play.google.com/store/apps/details?id=com.asia_proo_teknologi");
     }
 }
 

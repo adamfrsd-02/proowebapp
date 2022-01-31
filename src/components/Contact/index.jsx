@@ -37,7 +37,7 @@ const Contact = () => {
           <div className="flex bg-white flex-col p-6 pl-14 pr-14 lg:max-w-md xl:max-w-lg lg:text-left rounded-2xl shadow-md space-y-10 lg:w-2/3">
             <form action="" method="post">
               <div className="col-span-full sm:col-span-3">
-                <label for="nama" className="text-sm mb-2">
+                <label htmlFor="nama" className="text-sm mb-2">
                   Nama *
                 </label>
                 <input
@@ -48,7 +48,7 @@ const Contact = () => {
                 />
               </div>
               <div className="col-span-full sm:col-span-3 mt-3">
-                <label for="email" className="text-sm mb-2">
+                <label htmlFor="email" className="text-sm mb-2">
                   Email *
                 </label>
                 <input
@@ -59,7 +59,7 @@ const Contact = () => {
                 />
               </div>
               <div className="col-span-full sm:col-span-3 mt-3 mb-8">
-                <label for="pesan" className="text-sm mb-2">
+                <label htmlFor="pesan" className="text-sm mb-2">
                   Pesan *
                 </label>
                 <textarea

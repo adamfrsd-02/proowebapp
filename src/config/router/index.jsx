@@ -12,6 +12,9 @@ import Navbar from "../../components/Navbar";
 import { LandingPage, PackageDetail } from "../../pages";
 import { getPaket } from "../../redux/actions/paket";
 import { getPelajaran } from "../../redux/actions/pelajaran";
+import { AnimatePresence } from "framer-motion";
+import PrivacyPolicy from "../../pages/PrivacyPolicy";
+import TOS from "../../pages/TOS";
 
 const Routing = () => {
   const dispatch = useDispatch();
@@ -21,14 +24,22 @@ const Routing = () => {
     dispatch(getPelajaran());
   }, []);
   return (
-    <Router>
-      <Navbar />
-      <Routes>
-        <Route path="/" exact element={<LandingPage />} />
-        <Route path="/detail-paket/:menuId" exact element={<PackageDetail />} />
-      </Routes>
-      <Footer />
-    </Router>
+    <AnimatePresence>
+      <Router>
+        <Navbar />
+        <Routes>
+          <Route path="/" exact element={<LandingPage />} />
+          <Route
+            path="/detail-paket/:menuId"
+            exact
+            element={<PackageDetail />}
+          />
+          <Route path="/privacy_policy" exact element={<PrivacyPolicy />} />
+          <Route path="/terms_of_service" exact element={<TOS />} />
+        </Routes>
+        <Footer />
+      </Router>
+    </AnimatePresence>
   );
 };
 
