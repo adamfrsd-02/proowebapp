@@ -54,17 +54,17 @@ const Footer = () => {
                   <p className="text-2xl font-bold">Layanan</p>
                   <ul className="space-y-4">
                     <li>
-                      <a href="#" className="hover:dark:text-green-400">
+                      <a href="#product" className="hover:dark:text-green-400">
                         Proo Mengaji
                       </a>
                     </li>
                     <li>
-                      <a href="#" className="hover:dark:text-green-400">
+                      <a href="#product" className="hover:dark:text-green-400">
                         Proo Bahasa
                       </a>
                     </li>
                     <li>
-                      <a href="#" className="hover:dark:text-green-400">
+                      <a href="#product" className="hover:dark:text-green-400">
                         Proo Bimbel
                       </a>
                     </li>
@@ -75,25 +75,34 @@ const Footer = () => {
                 <p className="text-2xl font-bold">Bantuan</p>
                 <ul className="space-y-4">
                   <li>
-                    <a href="#" className="hover:dark:text-green-400">
+                    <a
+                      href="https://www.youtube.com/watch?v=nL87m6dqd-Q"
+                      className="hover:dark:text-green-400"
+                    >
                       Penggunaan Aplikasi
                     </a>
                   </li>
                   <li>
-                    <a href="#" className="hover:dark:text-green-400">
+                    <a
+                      href="https://www.youtube.com/watch?v=jX_zZ39cUio"
+                      className="hover:dark:text-green-400"
+                    >
                       Ingin Menjadi Guru ?
                     </a>
                   </li>
                   <li>
-                    <a href="#" className="hover:dark:text-green-400">
+                    <a
+                      href="https://www.youtube.com/watch?v=nL87m6dqd-Q"
+                      className="hover:dark:text-green-400"
+                    >
                       Ingin Menjadi Murid ?
                     </a>
                   </li>
-                  <li>
+                  {/* <li>
                     <a href="#" className="hover:dark:text-green-400">
                       Frequently Asked Question
                     </a>
-                  </li>
+                  </li> */}
                 </ul>
               </div>
             </div>

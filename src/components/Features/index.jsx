@@ -2,7 +2,7 @@ import React from "react";
 
 const Features = () => {
   return (
-    <div className="-mt-20 md:-mt-40">
+    <div className="-mt-20 md:-mt-26" id="feature">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
         <path
           fill="#1f2d3d"
@@ -10,7 +10,7 @@ const Features = () => {
           d="M0,0L60,32C120,64,240,128,360,144C480,160,600,128,720,122.7C840,117,960,139,1080,133.3C1200,128,1320,96,1380,80L1440,64L1440,320L1380,320C1320,320,1200,320,1080,320C960,320,840,320,720,320C600,320,480,320,360,320C240,320,120,320,60,320L0,320Z"
         ></path>
       </svg>
-      <div className="bg-[#1f2d3d] text-white pb-32 md:-mt-20" id="feature">
+      <div className="bg-[#1f2d3d] text-white pb-32 md:-mt-20">
         <div className="header-text text-center md:-mt-6 -mt-2 space-y-3">
           <p className="font-black text-2xl">Fitur Proo</p>
           <p className="font-regular text-xl">

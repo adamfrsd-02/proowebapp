@@ -21,15 +21,10 @@ const Jumbotron = () => {
               Coba Sekarang
             </a> */}
             <a
-              href="#"
+              href="https://www.youtube.com/watch?v=nL87m6dqd-Q"
               className="px-10 py-4 text-lg font-bold rounded-2xl bg-green-500 text-white hover:cursor-pointer space-x-3"
             >
-              <i className="fas fa-play"></i>{" "}
-              <span>
-                <a href="https://www.youtube.com/watch?v=nL87m6dqd-Q">
-                  Lihat Demo
-                </a>
-              </span>
+              <i className="fas fa-play"></i> <span>Lihat Demo</span>
             </a>
             {/* <a
               href="#"

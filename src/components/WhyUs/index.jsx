@@ -10,7 +10,7 @@ const WhyUs = () => {
     AOS.refresh();
   }, []);
   return (
-    <div className="-mt-20 md:-mt-52">
+    <div className="-mt-20 md:-mt-52" id="about">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
         <path
           fill="#1f2d3d"
@@ -19,10 +19,7 @@ const WhyUs = () => {
         ></path>
       </svg>
       <div className="bg-[#1f2d3d] text-white pb-28">
-        <div
-          className="header-text text-center md:-mt-6 -mt-2 space-y-3"
-          id="about"
-        >
+        <div className="header-text text-center md:-mt-6 -mt-2 space-y-3">
           <p className="font-black text-2xl">Kenapa Harus Proo ?</p>
           <p className="font-regular text-xl">
             Sebagai layanan guru privat masa kini. <br />

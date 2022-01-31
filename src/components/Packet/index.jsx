@@ -24,7 +24,7 @@ const Packet = (props) => {
     );
 
   return (
-    <div className="-mt-20 md:-mt-52">
+    <div className="-mt-20 md:-mt-52" id="product">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
         <path
           fill="#f0f2f9"
