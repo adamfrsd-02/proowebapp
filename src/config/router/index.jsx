@@ -6,6 +6,7 @@ import {
   useNavigate,
   useLocation,
 } from "react-router-dom";
+import { BrowserHistory, HashHistory, History } from "history";
 import { useDispatch, useSelector } from "react-redux";
 import Footer from "../../components/Footer";
 import Navbar from "../../components/Navbar";
@@ -18,6 +19,7 @@ import TOS from "../../pages/TOS";
 
 const Routing = () => {
   const dispatch = useDispatch();
+  const history = useNavigate();
 
   React.useEffect(() => {
     dispatch(getPaket());
@@ -25,7 +27,7 @@ const Routing = () => {
   }, []);
   return (
     <AnimatePresence>
-      <Router>
+      <Router history={history}>
         <Navbar />
         <Routes>
           <Route path="/" exact element={<LandingPage />} />
