@@ -1,7 +1,6 @@
 {
   "name": "proowebapp",
   "version": "0.1.0",
-  "homepage": "https://www.proo.co.id",
   "private": true,
   "dependencies": {
     "@headlessui/react": "^1.4.3",
