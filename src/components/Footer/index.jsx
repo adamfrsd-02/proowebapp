@@ -2,8 +2,15 @@ import React, { Fragment, useState } from "react";
 import { Transition, Dialog } from "@headlessui/react";
 import getMobileOS from "../../utils/checkOS";
 import "../../utils/data";
-
+import {
+  BrowserRouter as Router,
+  Route,
+  Routes,
+  useNavigate,
+  useLocation,
+} from "react-router-dom";
 const Footer = () => {
+  const navigation = useNavigate();
   let [isOpen, setIsOpen] = useState(false);
 
   function closeModal() {
@@ -13,6 +20,10 @@ const Footer = () => {
   function openModal() {
     setIsOpen(true);
   }
+
+  const handlePrivacy = () => {
+    navigation("/privacy_policy");
+  };
   return (
     <div className="-mt-2 md:-mt-8">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
@@ -118,7 +129,7 @@ const Footer = () => {
                   <i className="fas fa-heart text-lg text-rose-500"></i> by Proo
                   Fullstack Developer &nbsp; &nbsp; &nbsp; |
                 </span>
-                <a href="/privacy_policy" className="hover:cursor-pointer">
+                <a onClick={handlePrivacy} className="hover:cursor-pointer">
                   <span>Privacy policy</span>
                 </a>
                 <a href="/terms_of_service">

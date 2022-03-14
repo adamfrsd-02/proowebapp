@@ -1,9 +1,7 @@
 import axios from "axios";
-import {
-  GET_PAKET
-} from "./types";
+import { GET_PAKET } from "./types";
 
-const api = "https://server.proo.co.id";
+const api = "https://admin.proo.co.id";
 //const api = "http://localhost:5000";
 
 export const getPaket = () => (dispatch) => {
@@ -13,7 +11,7 @@ export const getPaket = () => (dispatch) => {
       console.log("Success Paket :", res.data);
       dispatch({
         type: GET_PAKET,
-        payload: res.data
+        payload: res.data,
       });
     })
     .catch((err) => console.log("Error Paket :", err));
