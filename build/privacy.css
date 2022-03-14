@@ -1,0 +1,11 @@
+.container-privacy {
+  margin: auto;
+  align-items: center;
+  max-width: 750px;
+  padding: 20px;
+  box-sizing: border-box;
+  font-family: "Nunito", sans-serif;
+}
+
+.text-judul {
+}
