@@ -28,10 +28,10 @@ const Routing = () => {
       <Router>
         <Navbar />
         <Routes>
-          <Route path="/" exact element={<LandingPage />} />
-          <Route path="/detail-paket/:menuId" element={<PackageDetail />} />
-          <Route path="/privacy_policy" element={<PrivacyPolicy />} />
-          <Route path="/terms_of_service" element={<TOS />} />
+          <Route path="/" exact element={LandingPage} />
+          <Route path="/detail-paket/:menuId" element={PackageDetail} />
+          <Route path="/privacy_policy" element={PrivacyPolicy} />
+          <Route path="/terms_of_service" element={TOS} />
         </Routes>
         <Footer />
       </Router>
