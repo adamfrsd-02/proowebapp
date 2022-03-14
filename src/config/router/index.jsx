@@ -19,7 +19,6 @@ import TOS from "../../pages/TOS";
 
 const Routing = () => {
   const dispatch = useDispatch();
-  const history = useNavigate();
 
   React.useEffect(() => {
     dispatch(getPaket());
@@ -27,7 +26,7 @@ const Routing = () => {
   }, []);
   return (
     <AnimatePresence>
-      <Router history={history}>
+      <Router>
         <Navbar />
         <Routes>
           <Route path="/" exact element={<LandingPage />} />
